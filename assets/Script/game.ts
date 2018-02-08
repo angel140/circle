@@ -124,13 +124,13 @@ export default class NewClass extends cc.Component {
         this.startNode.active = true;
         this.gameNode.active = false;
         this.levelNode.active = false;
-       
+
 
     }
     onAboutBackStart() {
-       
+
         this.aboutNode.active = false;
-       
+
 
     }
     setLevelPanel() {
@@ -195,8 +195,8 @@ export default class NewClass extends cc.Component {
         this.mainNode.addChild(c);
         this.circleList.push(c);
         let path: string;
-        
-        path = 'resources/sound/' + (cid +1) + '.mp3';
+
+        path = 'resources/sound/' + (cid + 1) + '.mp3';
         cc.audioEngine.play(cc.url.raw(path), false, 1);
 
     }
@@ -242,22 +242,22 @@ export default class NewClass extends cc.Component {
         this.onReplay();
     }
     isCanOver() {
-     
+
         let iso = true;
         for (let i = this.circleList.length; i > 0; i--) {
-            let c = this.circleList[i-1];
+            let c = this.circleList[i - 1];
             let radius = c.getComponent("circle").radius;
-            if( (radius*radius) < 1280*1280 + 720* 720){
+            if ((radius * radius) < 1280 * 1280 + 720 * 720) {
                 iso = false;
             }
-            else{
-                this.circleList.splice(i-1,1);
+            else {
+                this.circleList.splice(i - 1, 1);
                 c.destroy();
             }
 
         }
         return iso
-        
+
     }
     update(dt) {
 
@@ -301,7 +301,7 @@ export default class NewClass extends cc.Component {
             }
         }
 
-        if (!gameover && (this.currStep >= this.levelData.needSteps&&this.isCanOver())) {
+        if (!gameover && (this.currStep >= this.levelData.needSteps && this.isCanOver())) {
 
             cc.log("通关失败");
             this.overPanel.getChildByName('tips').getComponent(cc.Label).string = '通关失败';
@@ -310,15 +310,15 @@ export default class NewClass extends cc.Component {
             this.overPanelLayout.getChildByName('nextButton').active = false;
 
         }
-        else if (gameover && (this.currStep <= this.levelData.needSteps&&this.isCanOver())) {
+        else if (gameover && (this.currStep <= this.levelData.needSteps && this.isCanOver())) {
             cc.log("通过成功")
             this.overPanel.getChildByName('tips').getComponent(cc.Label).string = '通关成功';
             this.overPanel.active = true;
             this.gamestart = false;
-            let itemData = configdata["level" + String(this.currLevel+1)]
+            let itemData = configdata["level" + String(this.currLevel + 1)]
             this.overPanelLayout.getChildByName('nextButton').active = false;
-            cc.sys.localStorage.setItem("savekey" + String(this.currLevel),"true") ;
-            if(itemData){
+            cc.sys.localStorage.setItem("savekey" + String(this.currLevel), "true");
+            if (itemData) {
                 this.overPanelLayout.getChildByName('nextButton').active = true;
             }
 
@@ -329,5 +329,5 @@ export default class NewClass extends cc.Component {
     }
 
 
-    // update (dt) {},
+
 }
