@@ -1,2 +1,7 @@
-# hello-world
-Hello world new project template.
+# circle
+是一个解密小游戏
+## 贡献者
+
+* 陈泽
+* 张宇
+* 王志鹏
