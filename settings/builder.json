@@ -1,0 +1,32 @@
+{
+  "appKey": "",
+  "appSecret": "",
+  "encryptJs": true,
+  "excludeScenes": [],
+  "includeAnySDK": false,
+  "includeSDKBox": false,
+  "inlineSpriteFrames": true,
+  "inlineSpriteFrames_native": true,
+  "jailbreakPlatform": false,
+  "md5Cache": false,
+  "mergeStartScene": false,
+  "oauthLoginServer": "",
+  "optimizeHotUpdate": false,
+  "orientation": {
+    "landscapeLeft": true,
+    "landscapeRight": true,
+    "portrait": false,
+    "upsideDown": false
+  },
+  "packageName": "org.cocos2d.helloworld",
+  "privateKey": "",
+  "renderMode": "1",
+  "startScene": "2d2f792f-a40c-49bb-a189-ed176a246e49",
+  "title": "wavegame",
+  "webOrientation": "auto",
+  "wechatgame": {
+    "appid": "wx94f93da34ace2040",
+    "orientation": "portrait"
+  },
+  "xxteaKey": "08fb7c96-0061-42"
+}
